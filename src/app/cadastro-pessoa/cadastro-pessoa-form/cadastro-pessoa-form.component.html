@@ -1,0 +1,16 @@
+<h1>Cadastro de Pessoa</h1> 
+
+<form #f="ngForm" (ngSubmit)="form_submit(f)">
+  <input type="text" ngModel name="nome" placeholder="Nome" >
+  <br/>
+  <input type="text" ngModel name="sobrenome" placeholder="Sobrenome">
+  <br/>
+  <button type="submit">Cadastrar</button>
+  <br/>
+</form>
+
+<ul>
+  <li *ngFor="let p of pessoas">
+    {{p.nome + ' ' + p.sobrenome}}
+  </li>
+</ul>
