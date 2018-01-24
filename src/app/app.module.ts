@@ -16,7 +16,8 @@ import { CadastroPessoaModule } from './cadastro-pessoa/cadastro-pessoa.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AngularFireModule.initializeApp(FirebaseConfig)
+    AngularFireModule.initializeApp(FirebaseConfig),
+    CadastroPessoaModule
 
   ],
   providers: [],
