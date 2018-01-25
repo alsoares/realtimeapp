@@ -10,13 +10,14 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class CadastroPessoaFormComponent implements OnInit {
 
-  constructor( private angularFire: AngularFireDatabase) { }
-
+  constructor( private db: AngularFireDatabase) { }
+ 
 
   ngOnInit() { }
 
   form_submit(f: NgForm){
-    this.angularFire.list("pessoas").push(
+    
+    this.db.list("pessoas").push(
       {
         nome: f.controls.nome.value,
         sobrenome: f.controls.sobrenome.value

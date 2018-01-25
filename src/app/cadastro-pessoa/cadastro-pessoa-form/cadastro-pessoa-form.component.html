@@ -1,11 +1,16 @@
-<h1>Cadastro de Pessoa</h1> 
-
+<div class="container">
+<br>
 <form #f="ngForm" (ngSubmit)="form_submit(f)">
-  <input type="text" ngModel name="nome" placeholder="Nome" >
-  <br/>
-  <input type="text" ngModel name="sobrenome" placeholder="Sobrenome">
-  <br/>
-  <button type="submit">Cadastrar</button>
-  <br/>
+  <div class="form-group">
+      <label >Nome</label>
+    <input class="form-control" type="text" ngModel name="nome">
+  </div>
+  <div class="form-group">
+      <label >Sobrenome</label>
+    <input class="form-control" type="text" ngModel name="sobrenome">
+  </div>
+<button class="btn btn-primary" type="submit">Cadastrar</button>
 </form>
 
+
+</div>

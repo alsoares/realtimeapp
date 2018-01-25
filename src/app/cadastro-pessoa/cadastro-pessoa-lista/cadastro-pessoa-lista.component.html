@@ -1,8 +1,36 @@
-<h1>Lista de Pessoas</h1>
-  
-  <ul>
-  <li *ngFor="let p of pessoas | async">
-    {{p.nome + ' ' + p.sobrenome}}
-  </li>
-</ul>
 
+<div class="container">
+  <br>
+  <table  class="table table-striped table-sm">
+    <thead >
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Sobrenome</th>
+        <th scope="col">Ações</th>
+      </tr>
+      <tr>
+          <th scope="col">
+              <input class="form-control" type="text" #nomeText>
+          </th>
+          <th scope="col">
+              <input class="form-control" type="text" #sobrenomeText>
+          </th>
+          <th scope="col">
+              <button class="btn btn-success" (click)="pesquisarPessoa(nomeText.value, sobrenomeText.value)">Pesquisar</button>
+          </th>
+        </tr>
+    </thead>
+    <tr  scope="row" *ngFor="let p of pessoas | async">
+      <td>
+          {{p.nome}} 
+      </td>
+      <td> 
+        {{p.sobrenome}}
+      </td>
+      
+      <td> 
+          <button class="btn btn-danger" (click)="deleteItem(p.key)">Delete</button>
+      </td>
+    </tr> 
+  </table>
+</div>
